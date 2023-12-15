@@ -1,0 +1,62 @@
+/* Your Project Official Font - These is the stylesheet to include Brand Font to web puclications */
+
+@font-face {
+	font-family: 'Anja-Eliane';
+	src: url('../fonts/AnjaElianeNornal.woff') format('woff'),url('../fonts/AnjaElianeNornal.woff') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+}
+
+@font-face {
+	font-family: 'Calibri';
+	src: url('../fonts/Calibri.woff') format('woff'),url('../fonts/Calibri.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+}
+
+/*
+// ICON SET
+*/
+
+// i {
+//     /* use !important to prevent issues with browser extensions that change fonts */
+//     font-family: 'FontName' !important;
+//     speak: none;
+//     font-size: 1rem;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-variant: normal;
+//     text-transform: none;
+//     vertical-align: middle;
+//     line-height: initial;
+
+//     display: inline-block;
+
+//     /* Better Font Rendering =========== */
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+// }
+
+// @import '../abstracts/_charset.scss';
+
+[class*='icon-']{
+	display: inline-block;
+
+	&:before{
+		content: '';
+		display: block;
+		height: 1em;
+		width: 1em;
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+}
+
+.icon-example {
+	&:before {
+		background-image: url('../img/vectors/icon-example.svg');
+	}
+}

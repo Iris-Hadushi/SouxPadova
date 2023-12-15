@@ -1,0 +1,46 @@
+// COLORS
+
+// 👉 Change the variable's values or add new color variables.
+
+$white:    #FFF !default;
+
+$gray-100: #F8F9FA !default;
+$gray-200: #E9ECEF !default;
+$gray-300: #DEE2E6 !default;
+$gray-400: #CED4DA !default;
+$gray-500: #ADB5BD !default;
+$gray-600: #6C757D !default;
+$gray-700: #495057 !default;
+$gray-800: #343A40 !default;
+$gray-900: #212529 !default;
+
+$black:    #000 !default;
+
+$blue:    #007BFF !default;
+$indigo:  #6610F2 !default;
+$purple:  #6F42C1 !default;
+$pink:    #E83E8C !default;
+$red:     #DC3545 !default;
+$orange:  #FD7E14 !default;
+$yellow:  #FFC107 !default;
+$green:   #28A745 !default;
+$teal:    #20C997 !default;
+$cyan:    #17A2B8 !default;
+
+$primary:       $indigo !default;
+$secondary:     $teal !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+$n-grey:    #F1F1F1 !default;
+$n-dgrey:   #4A4A4A !default;
+$n-green:   #00992D !default;
+$n-blue:   #1E4970 !default;
+
+$soux-blue: #9CB3D4 !default;
+$soux-yellow: #F6F5EF !default;
+

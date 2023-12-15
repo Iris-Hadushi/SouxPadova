@@ -1,0 +1,50 @@
+{% block html_head_container %}
+    {% include 'partials/html-header.twig' %}
+
+    {% block head %}
+    {% endblock %}
+
+    </head>
+{% endblock %}
+
+<body class="{% block body_class %}{% endblock %}" data-template="{{ template ? template ~ '.twig' : 'base.twig'}}">
+    <header class="header" >
+        {% block header %}
+            {% include "layout/header.twig"  %}
+        {% endblock %}
+    </header>
+
+    <main id="app" role="main" class="main-content">
+        <article class="app-page page-{% block page_class %}{% endblock %} post-{{post.ID}} type-{{post.post_type}} {{ sidebar_class }}">
+            <div class="app-overlay"></div>
+
+            <div class="app-scroll">
+                {% block content %}
+                    {{__('Spiacente, non sono presenti contenuti.','your-project')}}
+                {% endblock %}
+            </div>
+
+            {% if sidebar %}
+                <aside class="layout-sidebar">
+                    {{ sidebar }}
+                </aside>
+            {% endif %}
+        </article>
+    </main>
+
+    {% block modal %}
+    {% endblock %}
+
+    <footer id="footer" class="{{ footer_classes ? footer_classes : ''}}">
+    {% block footer %}
+        {% include 'layout/footer.twig' %}
+    {% endblock %}
+    </footer>
+
+    {# <div id="app-loader">
+         Fill with your custom Loader
+    </div> #}
+
+    {{ function('wp_footer') }}
+</body>
+</html>

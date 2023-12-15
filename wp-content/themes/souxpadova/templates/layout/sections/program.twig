@@ -1,0 +1,33 @@
+<section id="{{ id }}" class="program">
+    <div class="container">
+        <img src="/wp-content/themes/souxpadova/assets/img/icons/hero-icon-4.png" alt=""  class="img-4" />
+        <img src="/wp-content/themes/souxpadova/assets/img/icons/icon-6.png" alt=""  class="img-6" />
+        <div class="row ">
+            <div class="col-12 justify-content-center">
+                <div class="title-group">
+                    <h3>{{ program.title }}</h3>
+                    <h4>{{ program.subtitle }}</h4>
+                </div>
+                <div class="row pt-3 justify-content-center align-content-center ">
+                    {% for p in program.info_group %}
+                        <div class="col-12 col-md-3 col-sm-12 array">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-md-8">
+                                    <div class="data-container">
+                                        <div class="info">
+                                            <img src="{{ Image(p.icon).src }}" alt="{{ Image(p.image).alt }}"
+                                                 class="img-fluid icon"/>
+                                            <h6>{{ p.time_start }} {{ __(' - ','souxpadova') }}{{ p.time_end }}</h6>
+                                            <h4 class="text-uppercase">{{ p.title }}</h4>
+                                            <h6>{{ p.text }}</h6>
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

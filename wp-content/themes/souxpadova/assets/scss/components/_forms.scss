@@ -1,0 +1,275 @@
+
+form {
+  @import '../vendors/_cf7.scss';
+
+  .input-container {
+    position: relative;
+    // margin: 1rem 0;
+    font-size: 1rem;
+  }
+
+  label {
+    // display: none;
+    position: absolute;
+    top: .8em;
+    left: .5em;
+    margin: 0 0 0 1rem;
+    width: 100%;
+    color: $gray-500;
+    pointer-events: none;
+    user-select: none;
+    will-change: font-size, top, opacity;
+    transition: font-size .4s ease, top .4s ease, opacity .4s ease;
+
+    @include media-breakpoint-down(sm) {
+      margin: 0;
+      left: .8em;
+      width: 80%;
+    }
+  }
+
+  small {
+    color: $gray-500;
+
+    a {
+      color: $gray-600
+    }
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: .8em 1em;
+    background-color: $white;
+    border: {
+      width: 1px;
+      style: solid;
+      color: $gray-300;
+      radius: .3em;
+    };
+    outline: none;
+    // user-select: none;
+    @include media-breakpoint-down(sm) {
+      padding: .8em;
+    }
+    // If input is REQUIRED
+    &[required],
+    &[aria-required="true"] {
+      & ~ label {
+        &:after {
+          content: '*';
+          display: inline-block;
+          font-size: 1em;
+          vertical-align: text-top;
+        }
+      }
+    }
+
+    //If input is READONLY
+    &[readonly] {
+      color: $gray-500;
+      background-color: $gray-200;
+      pointer-events: none;
+    }
+
+    &[type="file"] {
+      font-style: italic;
+      direction: rtl;
+      color: $gray-400;
+      transition: direction 1s ease;
+
+      &::-webkit-file-upload-button {
+        padding: .25em 1em;
+        color: $gray-500;
+        font-size: .8em;
+        font-family: $system-font;
+        font-style: normal;
+        background-color: $white;
+        border: 1px solid $gray-300;
+        border-radius: .3em;
+      }
+
+
+      // If Input is :FOCUS or :NOT-EMPTY
+      &:focus,
+      &:not(:placeholder-shown) {
+        & ~ label {
+          // color: $black;
+          font-size: 1em;
+          top: 1em;
+          left: .5rem;
+          opacity: 1;
+
+          @include media-breakpoint-down(sm) {
+            margin: 0;
+            left: 1.8rem;
+          }
+        }
+      }
+
+      // If Input is :NOT-EMPTY
+      &.valid {
+        direction: ltr;
+        color: $gray-600;
+
+        & ~ label {
+          // color: $black;
+          font-size: .8em;
+          top: -.5em;
+          left: .5rem;
+          opacity: 0;
+
+          @include media-breakpoint-down(sm) {
+            margin: 0;
+            left: 1.8rem;
+          }
+        }
+      }
+
+      &::placeholder {
+        color: $soux-blue;
+      }
+    }
+
+    &[type="checkbox"],
+    &[type="radio"] {
+      position: absolute;
+      width: 0;
+      padding: inherit;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+
+      // Add Custom "Checkbox" using next <span> [Generetad from CF7]
+      & ~ span {
+        display: flex;
+        align-items: start;
+        cursor: pointer;
+
+        &:before {
+          content: '\f26e';
+          font-family: bootstrap-icons !important;
+          display: inline-block;
+          margin-right: .5em;
+          height: 1.5em;
+          width: 1.5em;
+          color: transparent;
+          text-align: center;
+          line-height: 1.4;
+          background-color: transparent;
+          border: 1px solid $gray-300;
+          opacity: 1;
+        }
+      }
+
+      // If Checkbox is CHECKED
+      &:checked {
+        & ~ span {
+          &:before {
+            color: $white;
+            background-color: $secondary;
+            border: 1px solid $secondary;
+          }
+        }
+      }
+    }
+
+    &[type="radio"] {
+      & ~ span {
+        &:before {
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &:focus {
+      border: {
+        color: $secondary;
+      }
+      box-shadow: 0 0 0 .25em rgba($secondary, .15);
+    }
+
+    // If Input is :FOCUS or :NOT-EMPTY
+    &:focus,
+    &:not(:placeholder-shown) {
+      & ~ label {
+        color: $black;
+        font-size: .8em;
+        top: -.5em;
+        left: .5rem;
+        opacity: 0;
+
+        @include media-breakpoint-down(sm) {
+          margin: 0;
+          left: .8em;
+        }
+      }
+    }
+
+    &::placeholder {
+      color: $soux-blue;
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    &[readonly] {
+      background: {
+        color: $gray-100;
+      };
+
+      &.qty {
+        text: {
+          align: center;
+        }
+      }
+    }
+  }
+
+  textarea {
+    height: 120px;
+  }
+
+  select {
+    display: block;
+    width: 100%;
+    padding: .8em 1em;
+    color: $black;
+    background: {
+      color: $white;
+      image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23DEE2E6'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      // image: url('../img/vectors/icon-cart.svg');
+      repeat: no-repeat;
+      size: 1rem;
+      position: calc(100% - .8rem) center;
+    }
+    border: 1px solid $gray-300;
+    border-radius: .3em;
+    outline: none;
+    -webkit-appearance: none;
+
+    &:focus {
+      background: {
+        image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23A3D343'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      }
+      border: 1px solid $secondary;
+      box-shadow: 0 0 0 .25em rgba($secondary, .25);
+    }
+  }
+
+  .gdpr {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  input[type="submit"],
+  button[type="submit"] {
+    @include btn-default;
+    width: 100%;
+    max-width: 100%;
+
+    &:disabled {
+      opacity: .25;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.mobile{
+    header{
+        position: fixed;
+    }
+
+    body{
+        overflow: auto;
+    }
+
+    #app{
+        position: relative;
+
+        .app-page{
+            position: relative;
+            // overflow: scroll;
+            pointer-events: all;
+            -webkit-overflow-scrolling: touch;
+
+            .app-scroll{
+                top: unset;
+                left: unset;
+                position: relative;
+            }
+        }
+    }
+}

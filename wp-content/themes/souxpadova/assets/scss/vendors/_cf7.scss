@@ -1,0 +1,74 @@
+// General Fix to Wrappers
+.wpcf7-form-control-wrap{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+// Checkboxes
+.wpcf7-acceptance{
+    .wpcf7-list-item{
+        margin-left: 0;
+    }
+
+    label{
+        position: relative;
+        top: unset;
+        left: unset;
+        margin: 1rem 0;
+        color: $black;
+        font-weight: 400;
+        pointer-events: all;
+    }
+}
+
+//Error Tips
+.wpcf7-not-valid-tip{
+    padding: .5em 1em;
+    color: $gray-600;
+    font-size: .8em;
+    // background-color: $yellow;
+
+    &:before{
+        content:"\f334";
+        margin-right: .5em;
+        color: $yellow;
+        font-family: bootstrap-icons !important;
+        vertical-align: middle;
+    }
+}
+
+.wpcf7-response-output{
+    padding: 1em 1em !important;
+    color: $white;
+    background-color: $green;
+    border-color: $green !important;
+
+    &:before{
+        content:"\f26a";
+        margin-right: .5em;
+        font-family: bootstrap-icons !important;
+        vertical-align: middle;
+    }
+}
+
+&.invalid,
+&.spam{
+    .wpcf7-response-output{
+        padding: 1em 1em;
+        color: $white;
+        background-color: $red;
+        border-color: $red !important;
+
+        &:before{
+            content:"\f335";
+            margin-right: .5em;
+            font-family: bootstrap-icons !important;
+            vertical-align: middle;
+        }
+    }
+}
+
+&.valid{
+    
+}

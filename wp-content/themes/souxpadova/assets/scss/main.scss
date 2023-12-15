@@ -1,0 +1,70 @@
+// VENDORS
+// In that case we use Bootstrap Framework
+
+@import "../../node_modules/bootstrap/scss/_functions"; // For easy and smarter Development
+
+//
+// ⚠️ IMPORTANT
+// This is for override Bootstrap's Variables.
+// If you want to use Bootstrap's default classes (ex .btn-default) but with your variables like colors, typography, etc.., you could copy the SCSS of Bootstrap (node_modules/bootstrap/scss/_variables.scss) and insert in the file 'abstracts/_variables.scss' below changing the values you want.
+@import "abstracts/_variables.scss";
+// ⚠️ PLEASE, HANDLE WITH CARE That could be tricky, if you don't feel comfortable don't use it. Use only the variables you'll put in base/_colors.scss, base/_typography.scss, etc..
+//
+@import "../../node_modules/bootstrap/scss/_variables"; // For easy and smarter Development
+@import "../../node_modules/bootstrap/scss/mixins/_breakpoints"; // For easy and smarter Development
+
+// ABSTRACTS (Or Utilities)
+@import 'abstracts/fontface';
+@import 'abstracts/mixins';
+@import 'abstracts/animations';
+
+// BASE
+@import 'base/helpers';
+@import 'base/colors';
+@import 'base/typography';
+@import 'base/reset'; // Reset/Normalize
+
+// LAYOUT
+@import 'layout/general';
+@import 'layout/header';
+@import 'layout/footer';
+
+// LAYOUT (Sections)
+@import 'layout/sections/hero';
+@import 'layout/sections/post-hero';
+@import 'layout/sections/about';
+@import 'layout/sections/program';
+@import 'layout/sections/information';
+@import 'layout/sections/contact';
+@import 'layout/sections/location';
+
+
+// COMPONENTS (Or Modules)
+@import 'components/buttons';
+@import 'components/filters';
+@import 'components/forms';
+@import 'components/modal';
+
+
+// PAGES
+@import "pages/homepage/homepage";
+@import "pages/about/about";
+@import "pages/contacts/contacts";
+@import "pages/privacy/privacy";
+
+// ERRORS
+@import "pages/errors/404";
+
+// POSTS
+@import "posts/cpt_example";
+
+// MOBILE RESETS
+// @import "layout/mobile";
+
+//
+// ⚠️ ABSOLUTELY OPTIONAL
+//
+// @import "themes/mode";
+
+// VENDORS
+@import "vendors/mapbox-gl";

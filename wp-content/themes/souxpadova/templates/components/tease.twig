@@ -1,0 +1,19 @@
+<article class="{{cols}} tease tease-{{item.post_type}} article {{item.categories()[0].slug}} {{classes}}" id="tease-{{item.ID}}" data-terms="{% for term in item.get_terms('category') %}{{term.slug}} {% endfor %}" {{attributes}} data-loop="{{loop.index}}">
+
+{% block content %}
+	<a href="{{ item.link }}">
+		<div class="thumbnail">
+			<img src="{{ Image(item.thumbnail).src }}" alt="{{ Image(item.thumbnail).alt }}" class=" cover"/>
+		</div>
+
+		<div class="p-3 content">
+			<div class="datas">
+				<h6 class="mb-3 category">{{item.get_terms('category')[0].name}}</h6>
+				<h3 class="h5 title">{{ item.title }}</h3>
+			</div>
+			<small>{{item.preview.length(20).read_more(false)}}</small>
+			<button class="d-block ps-0 mt-2 btn btn-underline">{{__('Leggi di più','your-project')}}</button>
+		</div>
+	</a>
+{% endblock %}
+</article>

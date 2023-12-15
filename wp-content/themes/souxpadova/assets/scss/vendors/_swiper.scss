@@ -1,0 +1,33 @@
+/* Scrollbar */
+.swiper-scrollbar {
+    background: {
+        color: $gray-100;
+    }
+    border: {
+        radius: 0;
+    }
+    
+    .swiper-horizontal > & {
+      bottom: 0;
+      height: 3px;
+    }
+    .swiper-vertical > & {
+      right: 0;
+      width: 3px;
+    }
+  }
+  .swiper-scrollbar-drag {
+    background: {
+        color: $gray-200;
+    }
+    border: {
+        radius: 0;
+    }
+
+    &:hover,
+    &:active{
+        background: {
+            color: $black;
+        }
+    }
+  }

@@ -1,0 +1,51 @@
+{% extends 'base.twig' %}
+
+{% set template = 'pages/homepage' %}
+{% block page_class %}home{% endblock %}
+
+{% block content %}
+
+    {% include 'layout/sections/hero.twig' with {
+        id: 'hero',
+        hero: post.meta('hero'),
+    } %}
+
+    {% include 'layout/sections/post-hero.twig' with {
+        id: 'post-hero',
+        phero: post.meta('post-hero'),
+    } %}
+
+
+    {% include 'layout/sections/about.twig' with {
+        id: 'about',
+        about: post.meta('about'),
+    } %}
+
+    {% include 'layout/sections/program.twig' with {
+        id: 'program',
+        program: post.meta('program'),
+    } %}
+
+    {% include 'layout/sections/information.twig' with {
+        id: 'information',
+        information: post.meta('information'),
+    } %}
+
+    {% include 'layout/sections/location.twig' with {
+        id: 'location',
+        location: post.meta('location'),
+    } %}
+
+    {% include 'layout/sections/contact.twig' with {
+        id: 'contact',
+        contact: post.meta('contact'),
+    } %}
+
+{% endblock %}
+
+
+{% block modal %}
+    {% include "layout/sections/modal.twig" with {
+        id:'contact-form',
+    }%}
+{% endblock %}

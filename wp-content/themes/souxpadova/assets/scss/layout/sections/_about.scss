@@ -1,0 +1,84 @@
+.about {
+  padding: 10rem 0;
+  @include media-breakpoint-down(md) {
+    padding: 3rem 1.5rem;
+  }
+
+  .p-logo {
+    height: 180px;
+  }
+
+  .l-title {
+    font-size: 0.8rem;
+    line-height: 1;
+    text-align: center;
+    font-weight: 600;
+    @include media-breakpoint-down(md) {
+      text-align: left;
+    }
+  }
+
+  p {
+    color: $black;
+  }
+
+  h2 {
+    color: $soux-blue;
+  }
+
+  .img-5 {
+    position: absolute;
+    display: block;
+    top: 90%;
+    right: 15%;
+    width: 135px;
+    @include media-breakpoint-down(md) {
+      padding: 1.5rem;
+      display: none;
+    }
+  }
+
+  .btn-blue {
+    padding: 22px 45px 22px 45px;
+    border-radius: 40px;
+    background-color: $soux-blue;
+    border: 1px solid $soux-blue;
+
+    &:hover {
+      background-color: transparent;
+      color: $soux-blue;
+    }
+  }
+
+  .img-wrp {
+    position: relative;
+
+    &::after {
+      display: block;
+      position: absolute;
+      height: 585px;
+      width: 500px;
+      content: '';
+      background-color: #F6F5EF;
+      border-radius: 30px;
+      bottom: -7%;
+      right: 22%;
+      z-index: -9999;
+      @media only screen and (min-width: 1200px) and (max-width: 1360px) {
+        right: 15%;
+      }
+      @media only screen and (max-width: 1200px) {
+        display: none;
+      }
+    }
+  }
+
+  .img-second {
+    @include media-breakpoint-down(md) {
+      height: auto;
+      padding-top: 10%;
+      margin: 0;
+    }
+  }
+
+}

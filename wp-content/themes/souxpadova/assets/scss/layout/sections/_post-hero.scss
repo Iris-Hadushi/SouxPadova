@@ -1,0 +1,51 @@
+.post-hero {
+  padding: 15rem 0 7rem;
+  color: white;
+  background-color: #9CB3D4;
+  text-align: center;
+  z-index: -100;
+  border-radius: 0 0 30px 30px;
+  @media screen and (max-width: 1300px) {
+    padding: 5rem 1rem 1rem;
+    margin: 0;
+  }
+  @media screen and(min-width: 920px) and (max-width: 1300px) {
+    padding-top: 7.5rem;
+  }
+
+  img {
+    display: block;
+    @media screen and (max-width: 1300px) {
+      display: none;
+    }
+  }
+
+  .img-1 {
+    position: absolute;
+    top: 85%;
+    right: 15%;
+    width: 155px;
+  }
+
+  .img-2 {
+    position: absolute;
+    top: 24%;
+    right: 15%;
+    width: 54px;
+  }
+
+  .img-3 {
+    position: absolute;
+    top: 90%;
+    left: 15%;
+    width: 127px;
+
+  }
+
+  .img-4 {
+    position: absolute;
+    top: 65%;
+    left: 7%;
+    width: 35px;
+  }
+}

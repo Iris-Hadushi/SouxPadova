@@ -1,0 +1,9 @@
+// ADMIN THEME
+// You could create an Admin Theme for your Backend
+.site_manager{
+    #wpbody{
+        .update-nag{
+            display: none;
+        }
+    }
+}

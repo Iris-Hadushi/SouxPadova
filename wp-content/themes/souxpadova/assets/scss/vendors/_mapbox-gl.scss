@@ -1,0 +1,53 @@
+.marker {
+    background: {
+        image: url('../img/vectors/marker.svg');
+        size: contain;
+        repeat: no-repeat;
+        position: center; 
+    }
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    max-width: 250px;
+}
+
+.mapboxgl-popup-tip{
+    opacity: 0;
+}
+  
+.mapboxgl-popup-content {
+    padding: 1.5rem;
+    box-shadow: 0 0 0 1px $gray-200;
+
+    h3{
+        @extend .h5;
+        font: {
+            family: $primary-font;
+        }
+    }
+
+    p{
+        font: {
+            size: .95rem;
+            weight: bold;
+        }
+        &:last-of-type{
+            display: none;
+        }
+    }
+    
+    .mapboxgl-popup-close-button{
+        color: $secondary;
+        font: {
+            size: 1rem;
+        }
+
+        &:focus{
+            outline: none
+        }
+    }
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["admin.scss"],"names":[],"mappings":"AAEA,kCAGY,YAAa","file":"admin.min.css","sourcesContent":["// ADMIN THEME\n// You could create an Admin Theme for your Backend\n.site_manager{\n    #wpbody{\n        .update-nag{\n            display: none;\n        }\n    }\n}\n"]}

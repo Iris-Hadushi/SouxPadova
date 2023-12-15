@@ -1,0 +1,19 @@
+{% if select %}
+	{% if mode == 'main' %}
+	<select id="" class="{{classes}}" name="{{name}}" onchange="location = this.value;">
+		{% for item in select %}
+		<option value="{{ item.link }}">{{ item.attr_title|slice(0,2) }}</option>
+			{% for subitem in item.children %}
+			<option value="{{ subitem.link }}">{{ subitem.attr_title|slice(0,2) }}</option>
+			{% endfor %}
+		{% endfor %}
+	</select>
+	{% else %}
+	<select id="" class="{{classes}}" name="{{name}}" onchange="location = this.value;">
+		{% for item in select %}
+		{{dump(item)}}
+		<option value="{{ item.link }}">{{ item.attr_title|slice(0,2) }}</option>
+		{% endfor %}
+	</select>
+	{% endif %}
+{% endif %}

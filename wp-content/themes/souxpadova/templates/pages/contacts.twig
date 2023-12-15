@@ -1,0 +1,18 @@
+{% extends 'base.twig' %}
+
+{% set template = 'pages/contacts' %}
+{% block page_class %}contacts{% endblock %}
+
+{% block content %}
+
+    <section class="map">
+      <div class="container-fluid px-0">
+         <div class="row align-items-center">
+            <div class="col-12 col-lg">
+               <div id="map" class="" data-map="mapbox" data-company="{{holder.registry.business_name}}" data-phone="{{holder.registry.phone}}" data-email="{{holder.registry.email}}" data-address="{{ holder.headquarter.address }}, {{ holder.headquarter.house_number }}<br>{{ holder.headquarter.zip_code }} {{ holder.headquarter.city }} - {{ holder.headquarter.province }}">{# Filled with JS #}</div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+{% endblock %}

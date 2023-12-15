@@ -1,0 +1,46 @@
+.information {
+  padding: 10rem 0;
+  @include media-breakpoint-down(md) {
+    padding: 1.5rem;
+  }
+.img-wrp{
+  position:relative;
+  &::after {
+    display: block;
+    position: absolute;
+    height: 585px;
+    width: 518px;
+    content: '';
+    background-color: #F6F5EF;
+    border-radius: 30px;
+    bottom: -4%;
+    left: 24%;
+    z-index: -9999;
+    @media only screen and (min-width: 1200px) and (max-width: 1360px) {
+      left: 15%;
+    }
+    @media only screen and (max-width: 1200px) {
+     display: none;
+    }
+  }
+}
+  .text-content {
+    padding: 2rem 0;
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      padding: 1rem 0;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: $soux-blue;
+    }
+
+    p {
+      color: $black;
+
+    }
+  }
+
+
+}

@@ -1,0 +1,16 @@
+<section id="{{ id }}" class="hero">
+    <div class="container c-hero ">
+        <div class="row r-content align-items-center justify-content-center">
+            <div class="col-12 col-lg-6 order-1 order-md-0">
+                <div class="text-content">
+                    <h1 class=" text-uppercase mb-5 mt-3">{{ hero.title }}</h1>
+                    <a href="#about" class="mt-4 btn-default btn-white" target="_blank">{{ hero.button.text }}</a>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 order-sm-0 order-md-1">
+                <img src="{{ Image(hero.image).src }}" alt="{{ hero.title }}" class="img-fluid img-second pb-3"/>
+            </div>
+        </div>
+    </div>
+
+</section>

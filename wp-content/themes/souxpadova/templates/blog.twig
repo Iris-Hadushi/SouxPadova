@@ -1,0 +1,55 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<section id="" class="pb-sm-5 results">
+		<div class="container-fluid">
+			{% block filters %}
+			<div id="filters" class="row filters">
+				<div class="col-12 d-sm-none h5 heading">
+					<button class="p-3 filters-toggler">{{__('Filtra ','your-project')}}</button>
+				</div>
+				<div class="col-12 col-sm py-sm-3 choice">
+					<label class="mb-0 px-2 py-2 filter-input disabled">
+						<input id="filter-all" type="checkbox" class="m-1" data-terms="all" data-label="{{__('Tutti','your-project')}}" checked>
+						<span for="filter-all"  class="btn-underline-animated">{{__('Tutti','your-project')}}</span>
+					</label>
+				</div>
+				{% for topic in topics %}
+					<div class="col-12 col-sm py-sm-3 choice">
+						<label class="mb-0 px-2 py-2 filter-input">
+							<input id="filter-{{ topic.name }}" type="checkbox" class="m-1" data-terms="{{topic.slug}}" data-label="{{topic.name}}">
+							<span for="filter-{{ topic.name }}" class="btn-underline-animated">{{topic.name}}</span>
+						</label>
+					</div>
+				{% endfor %}
+			</div>
+			{% endblock %}
+		</div>
+        <div class="container-fluid px-1">	
+            <div class="d-grid my-3 posts">
+                {% for post in posts %}
+					{% block tease %}
+						{% include ['tease-'~post.post_type~'.twig', 'components/tease.twig'] with {
+							'item': post,
+							'classes': '',
+							'term': topic,
+						} %}
+					{% endblock %}
+				{% endfor %}
+            </div>
+			{% block disclaimer %}
+			<div id="disclaimer" class="row justify-content-center py-5 disclaimer">
+				<div class="col-auto">
+					<h6 class="h3">{{__('Purtroppo non esistono contenuti con i filtri selezionati','your-project')}}</h6>
+				</div>
+			</div>
+			{% endblock %}
+			{% block load_more %}
+			<div class="row mt-3 mt-sm-5 pagination">
+				<button id="loadmore" class="btn btn-underline">{{__('Carica di più','your-project')}} <i class="ms-1 bi bi-plus-square-dotted"></i></button>
+				{# {% include 'partials/paginat ion.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %} #}
+			</div>
+			{% endblock %}
+        </div>
+    </section>
+{% endblock %}

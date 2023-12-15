@@ -1,0 +1,27 @@
+<section id="{{ id }}" class="about">
+    <div class="container c-about">
+        <img src="/wp-content/themes/souxpadova/dist/img/icons/hero-icon-5.png" alt="" class="img-5"/>
+        <div class="row r-content align-items-center">
+            <div class="col-12 col-lg-6 col-md-6 d-sm-flex justify-content-center ">
+                <div class="text-content">
+                    <h2 class="title mt-2">{{ about.title }}</h2>
+                    <p class="title mb-3 mt-2">{{ about.text }}</p>
+                    {% if about.button.text %}
+                        <a href="#" class="d-inline-block mt-2 mb-4 mb-lg-0 btn-default btn-blue"
+                           target="_blank">{{ about.button.text }}</a>
+                    {% endif %}
+                    <div class="col-12 col-lg-3 col-md-3">
+                        <img src="{{ Image(about.logo).src }}" alt="{{ about.title }}" class="img-fluid p-logo pb-3"/>
+                        <p class="l-title mb-3 mt-2">{{ about.logo_text }}</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6 col-md-6 d-flex justify-content-center order-lg-first img-wrp">
+                <img src="{{ Image(about.image).src }}" alt="{{ about.title }}" class="img-fluid img-second pb-3"/>
+            </div>
+
+        </div>
+    </div>
+</section>

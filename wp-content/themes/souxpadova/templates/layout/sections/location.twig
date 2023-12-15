@@ -1,0 +1,29 @@
+<section id="{{ id }}" class="location">
+    <div class="container l-container">
+        <div class="row h-100 d-flex align-content-center justify-content-center">
+            <div class="col-12 col-lg-5 col-md-6">
+                {% filter shortcodes %}
+                    [wpgmza id="1"]
+                {% endfilter %}
+            </div>
+            <div class="col-12 col-lg-6 mt-4 mt-lg-0">
+                <div class="row d-flex h-100 align-content-center justify-content-center">
+                    <div class="col-12 col-lg-7 col-md-6">
+                        <h5 class="text-uppercase">{{ post.location }}</h5></br>
+                        <p>{{ __('Nel 2023 nasce SOU x Padova, nella sede operativa di NOOO Agency.','souxpadova') }}</p></br>
+                        <p>
+                            {{ __('','souxpadova') }}{{ holder.registry.business_name }}<br>
+                            {{ __('','souxpadova') }}{{ holder.headquarter.address }}
+                            {{ __('','souxpadova') }}{{ holder.headquarter.house_number }}
+                            {{ __('-','souxpadova') }}
+                            {{ __('','souxpadova') }}{{ holder.headquarter.zip_code }}
+                            {{ __('','souxpadova') }}{{ holder.headquarter.city }}<br />
+                            <a href="tel:{{holder.registry.phone}}">{{ holder.registry.phone }}</a><br>
+                            <a href="mailto:{{ holder.registry.email }}">{{ holder.registry.email }}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

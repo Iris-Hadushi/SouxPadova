@@ -1,0 +1,52 @@
+{% if menu %}
+    {% if mode == 'main' %}
+
+        <ul class="nav{{ menu_class }}">
+			<li class="nav-item">
+				<button class="nav-link c-btn d-btn" data-modal-target="contact-form">{{ __('Richiedi info','souxpadova') }}</button>
+			</li>
+            {% for item in menu %}
+                <li class="nav-item  {{ item.classes | join(' ') }}">
+                    <a class="nav-link" target="{{ item.target }}" href="{{ item.link }}" data-id="{{ item.id }}"
+                       data-media-main="{{ Image(item.media_main).src }}"
+                       {% if item.media_bg %}data-media-bg="{{ Image(item.media_bg).src }}"
+                       {% else %}data-media-bg="{{ Image(site.theme.link ~ '/dist/img/fix-segreto.png').src }}"{% endif %}>{{ item.title }}</a>
+                </li>
+            {% endfor %}
+
+            {% if form %}
+                <li class="d-none d-lg-block nav-item  {{ item.classes | join(' ') }}">
+                    <button class="button-cta nav-link" data-form="{{ form.ID }}">{{ form_label }}</button>
+                </li>
+                <li class="d-block d-lg-none nav-item  {{ item.classes | join(' ') }}">
+                    <a href="{{ options.pages.reseller }}" class="button-cta nav-link">{{ form_label }}</a>
+                </li>
+            {% endif %}
+
+        </ul>
+    {% else %}
+        <ul class="nav  s-nav {{ menu_class }}">
+            <li class="nav-item">
+                <button class="nav-link c-btn"
+                        data-modal-target="contact-form">{{ __('Richiedi info','souxpadova') }}</button>
+            </li>
+            {% for item in menu %}
+                <li class="nav-item {{ layout }} {{ item.classes | join(' ') }} {% if item.children | length > 0 %}dropdown{% endif %}">
+                    <a class="nav-link" target="{{ item.target }}" href="{{ item.link }}" data-children='
+				{{ function('json_encode', item.children) }}'>{{ item.title }}</a>
+                    {% if item.children | length > 0 %}
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for subitem in item.children %}
+                                <li class="">
+                                    <a class="dropdown-item" target="{{ subitem.target }}"
+                                       href="{{ subitem.link }}">{{ subitem.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endif %}
+

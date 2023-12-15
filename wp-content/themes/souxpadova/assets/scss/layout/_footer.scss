@@ -1,0 +1,29 @@
+footer {
+  padding: 2rem 0;
+  background-color: #9CB3D4;
+  color: white;
+  margin-top: -1px;
+
+  a {
+    &:hover {
+      text-decoration: underline;
+      color: white !important;
+    }
+  }
+
+  .bi-instagram {
+    padding: 1rem;
+  }
+
+  .social {
+    @include media-breakpoint-down(md) {
+      margin-top: 1rem;
+    }
+  }
+
+  .logo {
+    img {
+      height: 40px;
+    }
+  }
+}

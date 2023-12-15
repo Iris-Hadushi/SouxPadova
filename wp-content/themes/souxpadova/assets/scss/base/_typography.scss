@@ -1,0 +1,106 @@
+// TYPOGRAPHY
+
+// 👉 Add the import of your project's webfonts (ex. Google Fonts, Iconfont, etc..)
+
+// Iconfont
+// Example: Bootstrap Icons 1.6.0
+// @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css'); // Already insert in function.php
+
+// Fontface
+// Example: Noto Sans (Google Fonts: https://fonts.google.com/specimen/Noto+Sans)
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
+
+// ✅ If you want you could create some variables fort easy font changing
+// Paste the node_modules/bootstrap/scss/_variables.scss in there and change the values you want
+
+// 👇 Something like this one below
+$system-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$heading-font: 'Anja-Eliane', sans-serif;
+$primary-font: 'Calibri', sans-serif;
+
+* {
+  /* Better Font Rendering */
+  // text-rendering: optimizeLegibility; ⚠️ Optional - That Optimize Legibility (slower rendering)
+  // text-rendering: optimizeSpeed; ⚠️ Optional - That Optimize Speed (faster rendering)
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $heading-font, sans-serif;
+  // font-size: 16px; ⚠️ Optional - Usually the browsers set this value to 16px (that property is the base of a rem > 1rem = 16px)
+  // Add CSS Attributes
+}
+
+h1,
+.h1 {
+  font-size: 2.5rem;
+  line-height: 3.3rem;
+  font-weight: 400;
+  color: $soux-blue;
+}
+
+h2,
+.h2 {
+  font-size: 2.25rem;
+  line-height: 3.2rem;
+  font-weight: 400;
+}
+
+
+h3,
+.h3 {
+  font-size: 2.25rem;
+  line-height: 2.65rem;
+  font-weight: 400;
+
+}
+
+h4,
+.h4 {
+  font-size: 1.37rem;
+  line-height: 3.25rem;
+  font-weight: 400;
+
+}
+
+h5,
+.h5 {
+  font-size: 2rem;
+  line-height: 2.1rem;
+
+}
+
+h6,
+.h6 {
+  font-size: 1.5rem;
+  line-height: 1.9rem;
+  font-weight: 400;
+  font-family: $primary-font;
+
+}
+
+//paragraphs
+p {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  font-family: $primary-font;
+}
+
+//buttons and links
+a {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.844rem;
+  font-family: $primary-font;
+}
+
+span {
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  font-family: $primary-font;
+}

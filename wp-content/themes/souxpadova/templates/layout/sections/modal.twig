@@ -1,0 +1,12 @@
+<section id="{{id}}" class="modal" data-modal data-post="{{post.ID}}">
+    <button class="btn-modal-close" data-modal-close><span class="visually-hidden">{{__('Chiudi')}}</span></button>
+    <div class="container" data-container>
+        <div class="row h-100 d-flex justify-content-center align-content-center">
+            <div class="col-12 contacts-container">
+                {% filter shortcodes %}
+                    [contact-form-7 id="5" title="Contact form 1"]
+                {% endfilter %}
+            </div>
+        </div>
+    </div>
+</section>
